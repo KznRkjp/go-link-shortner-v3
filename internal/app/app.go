@@ -46,7 +46,7 @@ func MainPageGet(res http.ResponseWriter, req *http.Request) {
 		res.WriteHeader(http.StatusBadRequest)
 		return
 	}
-	resURL := resURLStruct.OriginalUrl
+	resURL := resURLStruct.OriginalURL
 	res.Header().Set("Location", resURL)
 	res.WriteHeader(http.StatusTemporaryRedirect)
 

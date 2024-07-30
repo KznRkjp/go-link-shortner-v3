@@ -1,6 +1,6 @@
 package models
 
-type UrlRecord struct {
-	OriginalUrl string
-	ShortUrl    string
+type URLRecord struct {
+	OriginalURL string
+	ShortURL    string
 }

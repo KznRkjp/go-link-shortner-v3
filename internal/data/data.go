@@ -8,11 +8,13 @@ import (
 )
 
 // var ResDB []models.UrlRecord //Резидентная БД
-var ResDB = make(map[string]models.UrlRecord)
+var ResDB = make(map[string]models.URLRecord)
 
 func SaveData(ctx context.Context, body []byte) (result string, err error) {
 	url := urlgen.GenerateShortKey()
-	ResDB[url] = models.UrlRecord{string(body), url}
+	ResDB[url] = models.URLRecord{
+		OriginalURL: string(body),
+		ShortURL:    url}
 	result = "http://localhost:8080/" + url
 	return result, nil
 }
