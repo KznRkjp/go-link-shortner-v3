@@ -2,6 +2,7 @@ package app
 
 import (
 	"io"
+	"log"
 	"net/http"
 	"strings"
 
@@ -43,7 +44,8 @@ func MainPageGet(res http.ResponseWriter, req *http.Request) {
 	shortURL := strings.Trim(req.RequestURI, "/")
 	resURLStruct, ok := data.ResDB[shortURL]
 	if !ok {
-		res.WriteHeader(http.StatusBadRequest)
+		log.Println(ok)
+		res.WriteHeader(http.StatusInternalServerError)
 		return
 	}
 	resURL := resURLStruct.OriginalURL
