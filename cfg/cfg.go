@@ -1,3 +1,3 @@
 package cfg
 
-var Server string = "0.0.0.0:8080"
+var Server string = "127.0.0.1:8080"

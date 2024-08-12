@@ -45,6 +45,7 @@ func MainPageGet(res http.ResponseWriter, req *http.Request) {
 	resURLStruct, ok := data.ResDB[shortURL]
 	if !ok {
 		log.Println(ok)
+		// res.Write([]byte(resURLStruct.OriginalURL))
 		res.WriteHeader(http.StatusInternalServerError)
 		return
 	}
