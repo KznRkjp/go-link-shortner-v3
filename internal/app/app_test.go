@@ -98,8 +98,6 @@ func TestMainPageGet(t *testing.T) {
 			require.NoError(t, err)
 			fmt.Println(string(resBody))
 			assert.Equal(t, tt.want.responseText, string(resBody))
-			// assert.Equal(t, true, strings.HasPrefix(string(resBody), tt.want.responsePrefix))
-			// assert.Equal(t, tt.want.responseSuffixLen, utf8.RuneCountInString(strings.Split(string(resBody), "/")[len(strings.Split(string(resBody), "/"))-1]))
 			assert.Equal(t, tt.want.contentType, res.Header.Get("Content-Type"))
 		})
 	}
